@@ -26,10 +26,14 @@ function TextArea(props) {
             rows="8"
             value={text}
           ></textarea>
+          <button onClick={handleClick} className="btn btn-primary my-3">
+            Click me
+          </button>
         </div>
-        <button onClick={handleClick} className="btn btn-primary">
-          Click me
-        </button>
+      </div>
+      <div className="container">
+        <h3>Your Text Summary</h3>
+        <p>321 World and 4875 Characters</p>
       </div>
     </>
   );
