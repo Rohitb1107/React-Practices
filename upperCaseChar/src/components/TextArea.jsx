@@ -3,8 +3,13 @@ import React, { useState } from "react";
 function TextArea(props) {
   const [text, setText] = useState("");
 
-  function handleClick() {
+  function handleUpperText() {
     var newValue = text.toUpperCase();
+    setText(newValue);
+  }
+
+  function handleLowerText() {
+    var newValue = text.toLowerCase();
     setText(newValue);
   }
 
@@ -26,16 +31,24 @@ function TextArea(props) {
             rows="8"
             value={text}
           ></textarea>
-          <button onClick={handleClick} className="btn btn-primary my-3">
-            Click me
+          <button onClick={handleUpperText} className="btn btn-success my-3">
+            Convert to Uppercase
+          </button>
+          <button
+            onClick={handleLowerText}
+            className="btn btn-primary my-3 mx-2"
+          >
+            Convert to Lowercase
           </button>
         </div>
       </div>
       <div className="container">
         <h3>Your Text Summary</h3>
         <p>
-          {text.split(" ").length-1} Words and {text.length} Characters
+          {text.split(" ").length - 1} Words and {text.length} Characters
         </p>
+        <h4>Preview Text</h4>
+        <p>{text}</p>
       </div>
     </>
   );
