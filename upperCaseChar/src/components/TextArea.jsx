@@ -33,7 +33,9 @@ function TextArea(props) {
       </div>
       <div className="container">
         <h3>Your Text Summary</h3>
-        <p>321 World and 4875 Characters</p>
+        <p>
+          {text.split(" ").length-1} Words and {text.length} Characters
+        </p>
       </div>
     </>
   );
