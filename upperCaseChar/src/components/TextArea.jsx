@@ -13,6 +13,11 @@ function TextArea(props) {
     setText(newValue);
   }
 
+  function clearText() {
+    var newValue = "";
+    setText(newValue);
+  }
+
   function handleChange(e) {
     setText(e.target.value);
   }
@@ -21,8 +26,11 @@ function TextArea(props) {
     <>
       <div className="container">
         <div className="mb-3">
-          <label htmlFor="exampleFormControlTextarea1" className="form-label">
-            {props.Heading}
+          <label
+            htmlFor="exampleFormControlTextarea1"
+            className="form-label my-3"
+          >
+            <h2>{props.Heading}</h2>
           </label>
           <textarea
             onChange={handleChange}
@@ -39,6 +47,9 @@ function TextArea(props) {
             className="btn btn-primary my-3 mx-2"
           >
             Convert to Lowercase
+          </button>
+          <button onClick={clearText} className="btn btn-danger my-3">
+            Clear Text
           </button>
         </div>
       </div>
