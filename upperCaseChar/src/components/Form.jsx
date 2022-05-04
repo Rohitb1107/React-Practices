@@ -1,13 +1,13 @@
 import Navbar from "./Navbar";
 import TextArea from "./TextArea";
-import About from "./About";
+// import About from "./About";
 
 function Form() {
   return (
     <>
       <Navbar />
-      {/* <TextArea Heading="Enter Text" /> */}
-      <About />
+      <TextArea Heading="Enter Text" />
+      {/* <About /> */}
     </>
   );
 }
