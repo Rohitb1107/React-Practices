@@ -24,7 +24,7 @@ function TextArea(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container my-3" style={mode}>
         <div className="mb-3">
           <label
             htmlFor="exampleFormControlTextarea1"
@@ -50,6 +50,9 @@ function TextArea(props) {
           </button>
           <button onClick={clearText} className="btn btn-danger my-3">
             Clear Text
+          </button>
+          <button onClick={changeMode} className="btn btn-info mx-2">
+            Change mode
           </button>
         </div>
       </div>
