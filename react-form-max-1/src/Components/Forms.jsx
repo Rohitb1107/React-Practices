@@ -2,10 +2,11 @@ import { useState } from "react";
 import "../App.css";
 
 const Form = () => {
-  const [fName, setfName] = useState("Rohit");
+  const [fName, setfName] = useState("");
 
   function changeHandler(e) {
     console.log(e.target.value);
+    setfName(e.target.value);
   }
 
   return (
@@ -32,12 +33,12 @@ const Form = () => {
             </div>
           </div>
           <button type="button" className="btn btn-primary my-2">
-            Primary
+            Submit
           </button>
 
           <div className="show-content">
-            <h1>Your First name is: {fName}</h1>
-            <h1>Your Last name is: Bagadi</h1>
+            <h1>Your First name is : {fName}</h1>
+            <h1>Your Last name is : Bagadi</h1>
           </div>
         </div>
       </form>
