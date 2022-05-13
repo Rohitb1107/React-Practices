@@ -1,9 +1,9 @@
 // const MovieCard = (props) => {
 //   return (
 //     <div className="movie-card">
-//       <img src={props.movie1.Poster} alt="" />
-//       <div>{props.movie1.Title}</div>
-//       <div>{props.movie1.Year}</div>
+//       <img src={props.e.Poster} alt="" />
+//       <div>{props.e.Title}</div>
+//       <div>{props.e.Year}</div>
 //     </div>
 //   );
 // };

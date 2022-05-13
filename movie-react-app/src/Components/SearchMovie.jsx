@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import MovieCard from "./MovieCard";
+// import MovieCard from "./MovieCard";
 
 const SearchMovie = () => {
   const [movies, setMovies] = useState([]);
@@ -34,15 +34,23 @@ const SearchMovie = () => {
         <button onClick={() => Search(searchM)}>Search</button>
       </div>
 
-      {movies.map((e) => {
-        return (
-          <div className="movie-card">
-            <img src={e.Poster} alt="" />
-            <div>{e.Title}</div>
-            <div>{e.Year}</div>
-          </div>
-        );
-      })}
+      <div className="main-div">
+        {movies.map((e) => {
+          return (
+            <div className="movie-card">
+              <img src={e.Poster} alt="" />
+              <div>{e.Title}</div>
+              <div>{e.Year}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* <div className="main-div">
+        {movies.map((e) => {
+          <MovieCard e={e} />;
+        })}
+      </div> */}
     </>
   );
 };
