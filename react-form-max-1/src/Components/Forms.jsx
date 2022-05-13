@@ -2,12 +2,26 @@ import { useState } from "react";
 import "../App.css";
 
 const Form = () => {
-  const [fName, setfName] = useState("");
+  // const [fName, setfName] = useState("");
+  const [userInput, setUserInput] = useState({
+    fName: "",
+    lName: "",
+  });
 
   function changeHandler(e) {
-    console.log(e.target.value);
-    setfName(e.target.value);
+    setUserInput((prevState) => {
+      return {
+        ...prevState,
+        fName: e.target.value,
+        lName: e.target.value,
+      };
+    });
   }
+
+  // function changeHandler(e) {
+  //   console.log(e.target.value);
+  //   setfName(e.target.value);
+  // }
 
   return (
     <>
