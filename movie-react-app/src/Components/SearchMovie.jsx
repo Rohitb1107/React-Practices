@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const SearchMovie = () => {
+  const [movie, setMovie] = useState([]);
   const API = "http://www.omdbapi.com/?i=tt3896198&apikey=17a08660";
+
   const Search = async (title) => {
     const response = await fetch(`${API}&s=${title}`);
     const data = await response.json();
-
-    console.log(data.Search);
+    const movies = data.Search;
+    console.log(movies);
+    setMovie(movies);
   };
 
   useEffect(() => {
@@ -15,7 +18,11 @@ const SearchMovie = () => {
 
   return (
     <>
-      <h1>Search your movie</h1>
+      <h1>MoviesLand</h1>
+      <div className="search"></div>
+      {movie.map((e) => {
+        <p>{e.Title}</p>;
+      })}
     </>
   );
 };
