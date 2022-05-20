@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Navbar from "./Components/Navbar";
+import News from "./Components/News";
 
 function App() {
   return (
     <div className="App">
-      <h1>My News App</h1>
+      <Navbar />
+      <News />
     </div>
   );
 }
