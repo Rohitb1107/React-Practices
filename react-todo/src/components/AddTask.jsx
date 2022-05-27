@@ -1,43 +1,51 @@
 import React, { useState } from "react";
 
-const AddTask = () => {
+function AddTask(props) {
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
 
-  function handleChange(e) {
-    const [name, value] = e.target;
-    setNote((prev) => {
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setNote((prevNote) => {
       return {
-        ...prev,
+        ...prevNote,
         [name]: value,
       };
     });
   }
 
+  function submitNote(event) {
+    event.preventDefault();
+    props.onAdd(note);
+    setNote({
+      title: "",
+      content: "",
+    });
+  }
+
   return (
-    <>
+    <div>
       <form>
         <input
-          onChange={handleChange}
-          type="text"
-          value={note.title}
           name="title"
-          id="title"
-          placeholder="Enter title"
+          onChange={handleChange}
+          value={note.title}
+          placeholder="Title"
         />
         <textarea
-          onChange={handleChange}
           name="content"
+          onChange={handleChange}
           value={note.content}
-          id="content"
-          placeholder="Add note"
-        ></textarea>
-        <button>Add</button>
+          placeholder="Take a note..."
+          rows="3"
+        />
+        <button onClick={submitNote}>Add</button>
       </form>
-    </>
+    </div>
   );
-};
+}
 
 export default AddTask;
