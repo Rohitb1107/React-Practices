@@ -5,6 +5,7 @@ import Products from "./Products";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [cart, setCart] = useState([]);
   function getData() {
     axios
       .get("https://fakestoreapi.com/products")
@@ -21,12 +22,14 @@ const Home = () => {
     getData();
   }, []);
 
+  console.log(cart);
+
   return (
     <div className="outer-div">
       {data.map((prod) => {
         return (
           <div className="container" key={prod.id}>
-            <Products prod={prod} />
+            <Products prod={prod} cart={cart} setCart={setCart} />
           </div>
         );
       })}
