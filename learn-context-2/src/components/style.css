@@ -12,3 +12,9 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
+
+button {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
